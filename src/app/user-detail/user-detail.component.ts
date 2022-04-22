@@ -11,8 +11,10 @@ import { takeWhile } from 'rxjs/operators';
   styleUrls: ['./user-detail.component.scss']
 })
 export class UserDetailComponent implements OnInit, OnDestroy {
-  user$: Observable<IUser>;
-  similarUsers$: Observable<IUser[]>;
+  user: IUser;
+  similarUsers: IUser[];
+  // user$: Observable<IUser>;
+  // similarUsers$: Observable<IUser[]>;
   isComponentAlive: boolean;
   constructor(
     private userService: UserService,
