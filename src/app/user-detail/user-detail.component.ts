@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { UserService } from '../core/services/user.service';
 import { IUser } from '../core/interfaces/user.interface';
 import { ActivatedRoute } from '@angular/router';
-import { takeWhile } from 'rxjs/operators';
+import { takeWhile} from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-detail',
@@ -27,8 +27,8 @@ export class UserDetailComponent implements OnInit, OnDestroy {
       takeWhile(() => !!this.isComponentAlive)
     ).subscribe((params) => {
       const userId = params.get('uuid');
-      this.similarUsers$ = this.userService.getSimilarUsers(userId);
-      this.user$ = this.userService.getUser(userId);
+      this.similarUsers = this.userService.getSimilarUsers(userId);
+      this.user = this.userService.getUser(userId);
     })
   }
 
